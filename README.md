@@ -24,7 +24,7 @@ ObJack-Admin 一款基于 Vue3.4、TypeScript、Vite5、Pinia、Element-Plus 开
 
 - **Clone：**
 
-fork the project to your own repository
+> fork the project to your own repository
 
 ```text
 git clone https://github.com/your-name/ObJack-Admin.git
