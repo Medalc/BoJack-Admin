@@ -16,9 +16,20 @@
     "url": "https://github.com/Medalc/BoJack-Admin.git"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "dev": "vite --mode development --host 0.0.0.0  --open",
+    "serve": "vite",
+    "build:dev": "vue-tsc && vite build --mode development",
+    "build:test": "vue-tsc && vite build --mode test",
+    "build:pro": "vue-tsc && vite build --mode production",
+    "type:check": "vue-tsc --noEmit --skipLibCheck",
+    "preview": "npm run build:dev && vite preview",
+    "lint:eslint": "eslint --fix --ext .js,.ts,.vue ./src",
+    "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "release": "standard-version",
+    "commit": "git add -A && czg && git push"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
