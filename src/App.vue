@@ -1,27 +1,45 @@
-<script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-</script>
-
 <template>
-  <div>
-    <a href="#" target="_blank">
-      <img src="/logo.svg" class="logo" alt="Vite logo" />
-    </a>
-  </div>
-  <HelloWorld msg="初始化中..." />
+  <el-config-provider :locale="locale" :size="assemblySize" :button="buttonConfig">
+    <router-view></router-view>
+  </el-config-provider>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup lang="ts">
+import { onMounted, reactive, computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { getBrowserLang } from "@/utils";
+import { useTheme } from "@/hooks/useTheme";
+import { ElConfigProvider } from "element-plus";
+import { LanguageType } from "./stores/interface";
+import { useGlobalStore } from "@/stores/modules/global";
+
+import en from "element-plus/es/locale/lang/en";
+import zhCn from "element-plus/es/locale/lang/zh-cn";
+
+const globalStore = useGlobalStore();
+
+// init theme
+const { initTheme } = useTheme();
+initTheme();
+
+// init language
+const i18n = useI18n();
+onMounted(() => {
+  const language = globalStore.language ?? getBrowserLang();
+  i18n.locale.value = language;
+  globalStore.setGlobalState("language", language as LanguageType);
+});
+
+// element language
+const locale = computed(() => {
+  if (globalStore.language == "zh") return zhCn;
+  if (globalStore.language == "en") return en;
+  return getBrowserLang() == "zh" ? zhCn : en;
+});
+
+// element assemblySize
+const assemblySize = computed(() => globalStore.assemblySize);
+
+// element button config
+const buttonConfig = reactive({ autoInsertSpace: false });
+</script>

@@ -1,0 +1,90 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "path": "/dataScreen",
+      "name": "dataScreen",
+      "component": "/dataScreen/index",
+      "meta": {
+        "icon": "Histogram",
+        "title": "数据大屏",
+        "isLink": "",
+        "isHide": true,
+        "isFull": true,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/proTable/useProTable",
+      "name": "useProTable",
+      "component": "/proTable/useProTable/index",
+      "meta": {
+        "icon": "MessageBox",
+        "title": "设备管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/proTable/useTreeFilter4",
+      "name": "useTreeFilter1",
+      "component": "/proTable/useTreeFilter/index",
+      "meta": {
+        "icon": "Menu",
+        "title": "人证管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/proTable/useTreeFilter3",
+      "name": "useTreeFilter2",
+      "component": "/proTable/useTreeFilter/index",
+      "meta": {
+        "icon": "Menu",
+        "title": "厂区分布",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/proTable/useTreeFilter2",
+      "name": "useTreeFilter3",
+      "component": "/proTable/useTreeFilter/index",
+      "meta": {
+        "icon": "Menu",
+        "title": "配件管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/proTable/useTreeFilter1",
+      "name": "useTreeFilter4",
+      "component": "/proTable/useTreeFilter/index",
+      "meta": {
+        "icon": "Menu",
+        "title": "维保管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    }
+  ],
+  "msg": "成功"
+}
