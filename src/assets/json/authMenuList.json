@@ -18,10 +18,10 @@
     {
       "path": "/proTable/useProTable",
       "name": "useProTable",
-      "component": "/proTable/useProTable/index",
+      "component": "/dashboard/dataVisualize/index",
       "meta": {
-        "icon": "MessageBox",
-        "title": "设备管理",
+        "icon": "Odometer",
+        "title": "仪表盘",
         "isLink": "",
         "isHide": false,
         "isFull": false,
@@ -35,13 +35,202 @@
       "component": "/proTable/useTreeFilter/index",
       "meta": {
         "icon": "Menu",
-        "title": "人证管理",
+        "title": "列表页",
         "isLink": "",
         "isHide": false,
         "isFull": false,
         "isAffix": false,
         "isKeepAlive": true
-      }
+      },
+      "children": [
+        {
+          "path": "/proTable/useTreeFilter",
+          "name": "useTreeFilter1",
+          "component": "/proTable/useTreeFilter/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "基础列表",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "/widget",
+      "name": "widget",
+      "redirect": "/widget/guide",
+      "meta": {
+        "icon": "Briefcase",
+        "title": "常用组件",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/widget/guide",
+          "name": "guide",
+          "component": "/widget/guide/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "引导页",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/widget/tabs",
+          "name": "tabs",
+          "component": "/widget/tabs/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "标签页操作",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          },
+          "children": [
+            {
+              "path": "/widget/tabs/detail/:id",
+              "name": "tabsDetail",
+              "component": "/widget/tabs/detail",
+              "meta": {
+                "icon": "Menu",
+                "title": "Tab 详情",
+                "activeMenu": "/widget/tabs",
+                "isLink": "",
+                "isHide": true,
+                "isFull": false,
+                "isAffix": false,
+                "isKeepAlive": true
+              }
+            }
+          ]
+        },
+        {
+          "path": "/widget/selectIcon",
+          "name": "selectIcon",
+          "component": "/widget/selectIcon/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "图标选择器",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/widget/selectFilter",
+          "name": "selectFilter",
+          "component": "/widget/selectFilter/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "分类筛选器",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/widget/treeFilter",
+          "name": "treeFilter",
+          "component": "/widget/treeFilter/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "树形筛选器",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/widget/svgIcon",
+          "name": "svgIcon",
+          "component": "/widget/svgIcon/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "SVG 图标",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/widget/uploadFile",
+          "name": "uploadFile",
+          "component": "/widget/uploadFile/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "文件上传",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/widget/batchImport",
+          "name": "batchImport",
+          "component": "/widget/batchImport/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "批量添加数据",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/widget/wangEditor",
+          "name": "wangEditor",
+          "component": "/widget/wangEditor/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "富文本编辑器",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/widget/draggable",
+          "name": "draggable",
+          "component": "/widget/draggable/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "拖拽组件",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
     },
     {
       "path": "/proTable/useTreeFilter3",

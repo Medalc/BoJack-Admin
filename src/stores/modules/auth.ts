@@ -4,7 +4,7 @@ import { getAuthButtonListApi, getAuthMenuListApi } from "@/api/modules/login";
 import { getFlatMenuList, getShowMenuList, getAllBreadcrumbList } from "@/utils";
 
 export const useAuthStore = defineStore({
-  id: "geeker-auth",
+  id: "obJack-auth",
   state: (): AuthState => ({
     // 按钮权限列表
     authButtonList: {},

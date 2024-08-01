@@ -5,7 +5,8 @@ import { createProxy } from "./build/proxy";
 import { createVitePlugins } from "./build/plugins";
 import pkg from "./package.json";
 import dayjs from "dayjs";
-
+const INVALID_CHAR_REGEX = /[\u0000-\u001F"#$&*+,:;<=>?[\]^`{|}\u007F]/g;
+const DRIVE_LETTER_REGEX = /^[a-z]:/i;
 const { dependencies, devDependencies, name, version } = pkg;
 const __APP_INFO__ = {
   pkg: { dependencies, devDependencies, name, version },
@@ -17,9 +18,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
   const env = loadEnv(mode, root);
   const viteEnv = wrapperEnv(env);
+  console.log(createProxy(viteEnv.VITE_PROXY), "createProxy(viteEnv.VITE_PROXY)");
 
   return {
-    base: viteEnv.VITE_PUBLIC_PATH,
+    base: "./",
     root,
     resolve: {
       alias: {
@@ -70,7 +72,19 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           // Static resource classification and packaging
           chunkFileNames: "assets/js/[name]-[hash].js",
           entryFileNames: "assets/js/[name]-[hash].js",
-          assetFileNames: "assets/[ext]/[name]-[hash].[ext]"
+          assetFileNames: "assets/[ext]/[name]-[hash].[ext]",
+          sanitizeFileName(name: any) {
+            const match = DRIVE_LETTER_REGEX.exec(name);
+            const driveLetter = match ? match[0] : "";
+            // A `:` is only allowed as part of a windows drive letter (ex: C:\foo)
+            // Otherwise, avoid them because they can refer to NTFS alternate data streams.
+            return driveLetter + name.slice(driveLetter.length).replace(INVALID_CHAR_REGEX, "");
+          },
+          manualChunks(id: any) {
+            if (id.includes("node_modules")) {
+              return id.toString().match(/\/node_modules\/(?!.pnpm)(?<moduleName>[^\/]*)\//)?.groups!.moduleName ?? "vender";
+            }
+          }
         }
       }
     }

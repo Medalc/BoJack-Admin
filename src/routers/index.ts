@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import { useUserStore } from "@/stores/modules/user";
 import { useAuthStore } from "@/stores/modules/auth";
 import { LOGIN_URL, ROUTER_WHITE_LIST } from "@/config";
@@ -8,7 +8,7 @@ import NProgress from "@/config/nprogress";
 
 /**
  * @description 📚 路由参数配置简介
- * @param path ==> 菜单路径
+ * @param path ==> 菜单路径s
  * @param name ==> 菜单别名
  * @param redirect ==> 重定向地址
  * @param component ==> 视图文件路径
@@ -23,7 +23,7 @@ import NProgress from "@/config/nprogress";
  * @param meta.isKeepAlive ==> 是否缓存
  * */
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory("/obJack-dist"),
   routes: [...staticRouter, ...errorRouter],
   strict: false,
   scrollBehavior: () => ({ left: 0, top: 0 })

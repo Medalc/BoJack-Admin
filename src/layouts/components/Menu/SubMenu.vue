@@ -45,6 +45,9 @@ const handleClickMenu = (subItem: Menu.MenuOptions) => {
     }
   }
 }
+.el-sub-menu__title {
+  color: #b4b9bf;
+}
 .el-menu-item {
   color: #b4b9bf;
   &:hover {

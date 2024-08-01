@@ -10,7 +10,7 @@
     "url": "https://github.com/Medalc"
   },
   "license": "MIT",
-  "homepage": "https://github.com/HalseySpicy/Geeker-Admin",
+  "homepage": "https://github.com/HalseySpicy/obJack-Admin",
   "repository": {
     "type": "github",
     "url": "https://github.com/Medalc/BoJack-Admin.git"
@@ -19,8 +19,8 @@
     "dev": "vite --mode development --host 0.0.0.0  --open",
     "serve": "vite",
     "build:dev": "vue-tsc && vite build --mode development",
-    "build:test": "vue-tsc && vite build --mode test",
-    "build:pro": "vue-tsc && vite build --mode production",
+    "build:test": "vue-tsc &&vite build --mode test",
+    "build:pro": "vite build --mode production",
     "type:check": "vue-tsc --noEmit --skipLibCheck",
     "preview": "npm run build:dev && vite preview",
     "lint:eslint": "eslint --fix --ext .js,.ts,.vue ./src",
