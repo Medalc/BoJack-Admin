@@ -1,7 +1,7 @@
 <template>
   <div class="tool-bar-ri">
     <div class="header-icon">
-      <AssemblySize id="assemblySize" />
+      <!-- <AssemblySize id="assemblySize" /> -->
       <Language id="language" />
       <SearchMenu id="searchMenu" />
       <ThemeSetting id="themeSetting" />
@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useUserStore } from "@/stores/modules/user";
-import AssemblySize from "./components/AssemblySize.vue";
+// import AssemblySize from "./components/AssemblySize.vue";
 import Language from "./components/Language.vue";
 import SearchMenu from "./components/SearchMenu.vue";
 import ThemeSetting from "./components/ThemeSetting.vue";

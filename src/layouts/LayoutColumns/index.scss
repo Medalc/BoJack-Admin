@@ -65,7 +65,7 @@
     height: 100%;
     overflow: hidden;
     background-color: #001529;
-    border-right: 1px solid var(--el-border-color-light);
+    // border-right: 1px solid var(--el-border-color-light);
     transition: width 0.3s ease;
     .el-scrollbar {
       height: calc(100% - 55px);
